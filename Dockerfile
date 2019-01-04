@@ -2,7 +2,8 @@ FROM homdx/kivymd-store:004
 
 #USER ${USER}
 
-RUN date && cd /home/user/.buildozer/android/platform && time wget --quiet https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip && unzip android-ndk-r17c-linux-x86_64.zip >/dev/null 2>/dev/null && rm android-ndk-r17c-linux-x86_64.zip && date
+#17c to 16b
+RUN date && cd /home/user/.buildozer/android/platform && time wget --quiet https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip && unzip android-ndk-r18b-linux-x86_64.zip >/dev/null 2>/dev/null && rm android-ndk-r18b-linux-x86_64.zip && date
 
 COPY . app
 

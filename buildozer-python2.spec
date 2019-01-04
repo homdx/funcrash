@@ -92,7 +92,8 @@ android.minapi = 21
 android.sdk = 24
 
 # (str) Android NDK version to use
-android.ndk = 17c
+#android.ndk = 17c
+android.ndk = 18b
 
 p4a.branch = master
 
