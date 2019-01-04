@@ -94,7 +94,7 @@ android.sdk = 24
 # (str) Android NDK version to use
 android.ndk = 17c
 
-#p4a.branch = master
+p4a.branch = master
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
