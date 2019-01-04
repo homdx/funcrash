@@ -83,7 +83,7 @@ fullscreen = 1
 android.permissions = INTERNET
 
 # (int) Android API to use
-android.api = 21
+android.api = 19
 
 # (int) Minimum API required
 android.minapi = 21
@@ -93,9 +93,9 @@ android.sdk = 24
 
 # (str) Android NDK version to use
 #android.ndk = 17c
-android.ndk = 18b
+android.ndk = 17c
 
-p4a.branch = master
+#p4a.branch = master
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
