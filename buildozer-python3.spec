@@ -83,7 +83,7 @@ fullscreen = 1
 android.permissions = INTERNET
 
 # (int) Android API to use
-android.api = 27
+android.api = 21
 
 # (int) Minimum API required
 android.minapi = 21
@@ -92,7 +92,7 @@ android.minapi = 21
 android.sdk = 24
 
 # (str) Android NDK version to use
-android.ndk = 16b
+android.ndk = 17c
 #android.ndk_path = /home/user/.buildozer/crystax-ndk-10.3.1
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
