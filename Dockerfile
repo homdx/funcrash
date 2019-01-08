@@ -13,7 +13,7 @@ RUN echo rm -rf /home/user/.buildozer/android/platform/android-sdk-24 && sudo ap
  && cd app2 && cp -vf buildozer-python3.spec buildozer.spec \
  && patch -p0 <main-without-cred.patch  && time buildozer android debug || echo done
 
-RUN cd app && cp -vf buildozer-python31.spec buildozer.spec \
+RUN cd app2 && cp -vf buildozer-python31.spec buildozer.spec \
  && time buildozer android debug || echo done2
 
 CMD tail -f /var/log/faillog
