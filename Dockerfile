@@ -5,7 +5,7 @@ FROM homdx/pydelhi_mobile:api27
 ENV SDK_TOOLS="sdk-tools-linux-4333796.zip"
 ENV NDK_DL="https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip"
 ENV NDKVER=r17c
-ENV NDKDIR=/home/user/.buildozer/android/platform/
+ENV NDKDIR=/home/user/.buildozer/
 ENV NDKAPI=21
 ENV ANDROIDAPI=28
 ENV PIP=pip3
