@@ -2,6 +2,23 @@ FROM homdx/pydelhi_mobile:api27
 
 #USER ${USER}
 
+ENV SDK_TOOLS="sdk-tools-linux-4333796.zip"
+ENV NDK_DL="https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip"
+ENV NDKVER=r17c
+ENV NDKDIR=/home/user/.buildozer/android/platform/
+ENV NDKAPI=21
+ENV ANDROIDAPI=28
+ENV PIP=pip3
+
+RUN cd ${NDKDIR} && wget https://dl.google.com/android/repository/${SDK_TOOLS}
+RUN cd ${NDKDIR} && unzip ./sdk-tools-*.zip && chmod +x ./tools//bin/sdkmanager
+RUN yes | ${NDKDIR}/tools/bin/sdkmanager --licenses
+RUN ${NDKDIR}/tools/bin/sdkmanager --update
+RUN ${NDKDIR}/tools/bin/sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
+
+# Obtain Android NDK:
+RUN mkdir -p /tmp/ndk/ && cd /tmp/ndk/ && wget ${NDK_DL} && unzip -q android-ndk*.zip && mv android-*/ /ndk/
+
 COPY . app2
 
 RUN sudo chown -Rv user ${WORK_DIR}/app2
