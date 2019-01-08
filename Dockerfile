@@ -24,7 +24,7 @@ COPY . app2
 
 RUN sudo chown -Rv user ${WORK_DIR}/app2
 
-RUN sudo apt install -qq --yes python3-virtualenv python3-pip \
+RUN sudo apt install -qq --yes zip python3-virtualenv python3-pip \
     && pip2 uninstall cython buildozer --yes && pip3 install buildozer==0.37 cython==0.28.6 sh --user
 
 RUN echo rm -rf /home/user/.buildozer/android/platform/android-sdk-24 && sudo apt-get install python3.7 --yes && sudo git clone https://github.com/kivy/python-for-android.git && sudo chown user -R python-for-android && sudo wget https://github.com/homdx/pydelhi_mobile/releases/download/0.1.1/patch-so-python37.patch && patch -p0 <patch-so-python37.patch \
