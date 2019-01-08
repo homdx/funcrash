@@ -10,14 +10,15 @@ ENV NDKAPI=21
 ENV ANDROIDAPI=28
 ENV PIP=pip3
 
-RUN cd ${NDKDIR} && wget https://dl.google.com/android/repository/${SDK_TOOLS}
+RUN rm -rf /home/user/.buildozer/android/platform/android-sdk-24/ \
+   && cd ${NDKDIR} && wget https://dl.google.com/android/repository/${SDK_TOOLS}
 RUN cd ${NDKDIR} && unzip ./sdk-tools-*.zip && chmod +x ./tools//bin/sdkmanager
 RUN yes | ${NDKDIR}/tools/bin/sdkmanager --licenses
 RUN ${NDKDIR}/tools/bin/sdkmanager --update
 RUN ${NDKDIR}/tools/bin/sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 
 # Obtain Android NDK:
-RUN mkdir -p /tmp/ndk/ && cd /tmp/ndk/ && wget ${NDK_DL} && unzip -q android-ndk*.zip && sudo mv android-*/ /ndk/
+RUN ls -la /home/user/.buildozer/android/platform/ && mkdir -p /tmp/ndk/ && cd /tmp/ndk/ && wget ${NDK_DL} && unzip -q android-ndk*.zip && sudo mv android-*/ /ndk/ && ls -la /home/user/.buildozer/android/platform/
 
 COPY . app2
 
