@@ -17,7 +17,7 @@ RUN ${NDKDIR}/tools/bin/sdkmanager --update
 RUN ${NDKDIR}/tools/bin/sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
 
 # Obtain Android NDK:
-RUN mkdir -p /tmp/ndk/ && cd /tmp/ndk/ && wget ${NDK_DL} && unzip -q android-ndk*.zip && mv android-*/ /ndk/
+RUN mkdir -p /tmp/ndk/ && cd /tmp/ndk/ && wget ${NDK_DL} && unzip -q android-ndk*.zip && sudo mv android-*/ /ndk/
 
 COPY . app2
 
